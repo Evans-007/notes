@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width:  830px;
+    height: 994px;
+    border:1px solid lightgrey;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    background-color: lightgrey;
+}
+
+.header {
+    width: 100%;
+    height: 230px;
+    background-color: lightgrey;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.img {
+    text-align: center;
+}
+
+.img p {
+    padding-top: 8px;
+}
+
+.present {
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.present h1 {
+    margin-bottom: 12px;
+}
+
+
+.name {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+
+.name p{
+    width: 200px;
+    height: 30px;
+}
+
+
+.school {
+    width: 100%;
+    height: 130px;
+    background-color: whitesmoke;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.school > h3 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    background-color: gray;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    top:  -18px;
+}
+
+.school>div {
+    width: 100%;
+    height: 80px;
+    padding-top: 45px;
+    padding-left: 75px;
+    box-sizing: border-box;
+}
+
+.school>div li >p>span {
+    margin-left: 80px;
+}
+
+
+.work {
+    width: 100%;
+    height: 230px;
+    padding-left: 15px;
+    background-color: whitesmoke;
+    margin-top: 45px;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 25px;
+}
+.work > h3 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    background-color: gray;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    top:  -18px;
+}
+
+.work > div {
+    width: 100%;
+    height: 300px;
+    margin-top: 25px;
+    margin-left: 75px;
+}
+
+.work ul:nth-child(1) >li {
+    letter-spacing: 3px;
+}
+
+.work > div > ul:nth-child(2) > li {
+    margin-left: 45px;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+
+.skill {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    margin-top: 45px;
+    padding-left: 15px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+.skill > h3 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    background-color: gray;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    top:  -18px;
+}
+
+.skill > div {
+    margin-top: 45px;
+    margin-left: 75px;
+    display: flex;
+    position: absolute;
+}
+
+.skill > div > ul:nth-child(1) {
+    flex: 3;
+}
+
+.skill > div > ul:nth-child(2) {
+    flex: 4;
+}
+
+.tell {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    margin-top: 45px;
+    padding-left: 15px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+.tell > h3 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    background-color: gray;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    top: -18px;
+}
+
+.tell > div{
+    margin-top: 45px;
+    margin-left: 75px;
+    position: absolute;
+    display: flex;
+}
+
+.tell > div > span {
+    width: 260px;
+
+}
+
+
+
+
