@@ -1,0 +1,264 @@
+/*
+样式1
+    这是这边百分之30宽度 右边百分之70宽度
+*/
+
+/*.container {
+    border: 1px solid red;
+    display: flex;
+}
+
+.left {
+    flex: 3;
+    background-color: pink;
+}
+
+.right {
+    flex: 7;
+    background-color: blue;
+}*/
+
+
+/*-------------------------------------------------------------
+样式2
+*/
+/*.container {
+    border: 1px solid red;
+    overflow: hidden;   !*消除浮动*!
+}
+
+.left {
+    width: 30%;
+    float: left;
+    background-color: pink;
+}
+
+.right {
+    width: 70%;
+    float: left;
+    background-color: blue;
+}*/
+
+/*----------------------------------------------------------------------
+    样式3
+*/
+/*.container {
+    border: 1px solid red;
+}
+
+.left {
+    width: 30%;
+    float: left;
+    background-color: pink;
+}
+
+.right {
+    width: 70%;
+    float: left;
+    background-color: blue;
+}
+
+.container:after {
+    !*这是添加一个伪元素，来消除浮动，也可以手动添加一个div，在设置clear的值 left*!
+    content: "";
+    display: block;
+    height: 0;
+    clear: left;
+}*/
+
+/*-------------------------------------------------------------------------------
+    这是两栏案例，左边固定宽度，右边自适应
+    与右侧宽度固定。左侧自适应的样式，
+    样式1
+*/
+/** {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    border: 1px solid blue;
+    padding: 15px 20px;
+}
+
+.left {
+    width: 200px;
+    background-color: skyblue;
+
+}
+
+.right {
+    margin-left: 20px;
+    background-color: pink;
+}*/
+/*---------------------------------------------------------------
+    样式二
+    缺点：   需要知道左侧盒子的宽度，两个盒子的距离，
+            还要设置各个元素的box-sizing，需要消除空格字符的影响
+            需要设置vertical-align: top满足顶端对齐。
+
+            这个方案两个元素之间有空隙，需要吧元素挨着写，解决
+*/
+/*
+* {
+    padding: 0;
+    margin: 0;
+}
+.container-inline-block {
+    box-sizing: content-box;
+    font-size: 0;    !*消除空格的影响*!
+}
+
+.container .left,
+.container .right {
+    display: inline-block;
+    vertical-align: top;     顶端对齐
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: skyblue;
+}
+.container .left {
+    width: 200px;
+}
+.container .right {
+    width: calc(100% - 205px);
+    background-color: blue;
+}*/
+
+/*-----------------------------------------------
+    样式三
+    缺点： 需要知道左侧盒子的宽度，两个盒子的距离，还要设置各个元素的box-sizing。
+          父元素需要清除浮动。
+*/
+/** {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    overflow: auto;        !*清除浮动*!
+    box-sizing: content-box;
+}
+
+.container .left,
+.container .right {
+    float: left;
+    box-sizing: border-box;
+    background-color: pink;
+}
+
+.container .left {
+    width: 200px;
+}
+.container .right {
+    width: calc(100% - 205px);
+    background-color: blue;
+}*/
+
+/*----------------------------
+    样式四
+    缺点：   需要清除浮动
+            需要计算右侧盒子的margin-left
+*/
+/*.container {
+    overflow: hidden;       !*清除浮动*!
+}
+
+.container .left {
+    width: 150px;
+    float: left;
+    background-color: pink;
+}
+
+.container .right {
+    margin-left: 150px;
+    background-color: blue;
+}*/
+
+/*------------------------------
+    样式五
+    缺点：   使用了绝对定位，若是用在某个div中，需要更改父容器的position。
+            没有清除浮动的方法，若左侧盒子高于右侧盒子，就会超出父容器的高度。
+                因此只能通过设置父容器的min-height来放置这种情况。
+*/
+/*
+.container .left {
+    width: 150px;
+    position: absolute;
+    background-color: pink;
+}
+
+.container .right {
+    margin-left: 150px;
+    background-color: blue;
+}*/
+
+/*-----------------------------
+    样式6
+*/
+/*
+container {
+    width: 100%;
+    position: relative;
+}
+
+.left {
+    width: 150px;
+    float: left;
+    text-align: center;
+    background-color: pink;
+}
+
+.right {
+    overflow: hidden;
+    text-align: center;
+    background-color: blue;
+}
+*/
+
+/*-------------------------
+    样式7
+    flex可以说是最好的方案了，代码少，使用简单。有朝一日，大家都改用现代浏览器，
+    就可以使用了。需要注意的是，flex容器的一个默认属性值:align-items: stretch;。
+    这个属性导致了列等高的效果。为了让两个盒子高度自动，需要设置: align-items: flex-start;
+*/
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.container .left {
+    width: 240px;
+    background-color: pink;
+}
+
+.container .right {
+    flex: 1;
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
