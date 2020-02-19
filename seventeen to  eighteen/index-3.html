@@ -25,11 +25,14 @@
         var num = [];
         for(var i=1;i<=9;i++) {//外层循环决定行的数量
             let tr=document.createElement("tr");//创建tr;
+            let str = '';
             for (var j = 1; j <= i; j++) {//内层循环决定列的数量
                 let td=document.createElement("td")//创建td
-                td.innerHTML+=j + "*" + i + "=" + j * i;//把i*j=ij的过程赋值给td里面
+                str += j + "*" + i + "=" + j * i + "    ";
+                td.innerHTML += j + "*" + i + "=" + j * i;//把i*j=ij的过程赋值给td里面
                 tr.appendChild(td);//把td添加到tr里面
             }
+            console.log(str);
             document.getElementById("night").appendChild(tr);//找到table把tr添加到table里面
         }
     </script>
