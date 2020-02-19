@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #122b40;
+    list-style: none;
+    color: sky;
+}
+
+.container {
+    width: 810px;
+    height: 750px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.head {
+    width: 100%;
+    height: 65px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    font-size: 20px;
+
+}
+
+.data {
+    width: 100%;
+    height: 90px;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+
+.data > div > h3 {
+    margin-bottom: 20px;
+}
+.data li {
+    width: 230px;
+    height: 20px;
+    float: left;
+    display: flex;
+    font-size: 18px;
+}
+
+.data li > h5 > span {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.tell {
+    width: 100%;
+    height: 90px;
+    padding-left: 8px;
+
+}
+
+.tell > div > h3 {
+    margin-bottom: 20px;
+}
+
+.tell li {
+    width: 230px;
+    height: 20px;
+    float: left;
+    display: flex;
+    line-height: 20px;
+    font-size: 18px;
+}
+
+.tell li >h5 {
+    margin-right: 10px;
+}
+
+.tell li span {
+    margin-left: 10px;
+    font-weight: normal;
+}
+.tell li span > a {
+    text-decoration:none;
+    color: blue;
+}
+
+.art {
+    width: 100%;
+    height: 160px;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+
+.art > div > h3 {
+    margin-bottom: 20px;
+}
+
+.art > div li {
+    width: 100%;
+    height: 50px;
+}
+
+.art > div li > p {
+    font-size: 17px;
+}
+
+.school {
+    width: 100%;
+    height: 160px;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+
+.school > div > h3 {
+    margin-bottom: 20px;
+}
+
+.school > div li {
+    width: 100%;
+    height: 50px;
+}
+
+.school > div li > p {
+    font-size: 17px;
+}
+
+.work {
+    width: 100%;
+    height: 160px;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+
+.work > div > h3 {
+    margin-bottom: 20px;
+}
+
+.work > div li {
+    width: 100%;
+    height: 50px;
+}
+
+.work > div li > p {
+    font-size: 17px;
+}
+
