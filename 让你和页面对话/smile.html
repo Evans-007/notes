@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+
+    <script type="text/javascript">
+        let box = document.getElementById('box');
+        box.style.height = '480px';
+        box.style.width = '480px';
+        box.style.backgroundImage = "url(./images/smile.jpg)";
+        box.style.backgroundRepeat = 'no-repeat';
+        box.style.backgroundPositionX = '0';
+        box.style.backgroundPositionY = '-1px';
+
+
+        let timer;
+        let timerr;
+        let h = 0;
+        let s= 1;
+
+        //进入程序先调用一次，
+        timer = setInterval(function () {
+            h -= 480;
+            box.style.backgroundPositionY = h + 'px';
+            if (h <= -7680) {
+                s = 2;
+                clearInterval(timer);
+                console.log(s)
+                if (s == 2) {
+                    timerr = setInterval(function () {
+                        h += 480;
+                        box.style.backgroundPositionY = h + 'px';
+                        if (h == 0) {
+                            clearInterval(timerr);
+                        }
+                    }, 100);
+                }
+            }
+        }, 100);
+
+        //在使用 定时器，循环动画，注意时间设置
+        setInterval(function () {
+                timer = setInterval(function () {
+                    h -= 480;
+                    box.style.backgroundPositionY = h + 'px';
+                    if (h <= -7680) {
+                        s = 2;
+                        clearInterval(timer);
+                        console.log(s)
+                        if (s == 2) {
+                            timerr = setInterval(function () {
+                                h += 480;
+                                box.style.backgroundPositionY = h + 'px';
+                                if (h == 0) {
+                                    clearInterval(timerr);
+                                }
+                            }, 100);
+                        }
+                    }
+                }, 100);
+                //3200 等于 16张照片的播放，加16张照片的回来放，乘以100 毫秒
+            }, 3200);
+
+
+        console.log(s)
+
+
+
+
+
+    </script>
+</body>
+</html>
