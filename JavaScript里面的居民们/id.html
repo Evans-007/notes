@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div></div>
+<script>
+    var tree = {
+        "id": 0,
+        "name": "root",
+        "left": {
+            "id": 1,
+            "name": "Simon",
+            "left": {
+                "id": 3,
+                "name": "Carl",
+                "left": {
+                    "id": 7,
+                    "name": "Lee",
+                    "left": {
+                        "id": 11,
+                        "name": "Fate"
+                    }
+                },
+                "right": {
+                    "id": 8,
+                    "name": "Annie",
+                    "left": {
+                        "id": 12,
+                        "name": "Saber"
+                    }
+                }
+            },
+            "right": {
+                "id": 4,
+                "name": "Tony",
+                "left": {
+                    "id": 9,
+                    "name": "Candy"
+                }
+            }
+        },
+        "right": {
+            "id": 2,
+            "name": "right",
+            "left": {
+                "id": 5,
+                "name": "Carl",
+            },
+            "right": {
+                "id": 6,
+                "name": "Carl",
+                "right": {
+                    "id": 10,
+                    "name": "Kai"
+                }
+            }
+        }
+    };
+   /* Reflect.ownKeys(tree).forEach(function(key){
+        console.log(key,tree[key]);
+        if (typeof tree[key] == 'object') {
+            Reflect.ownKeys(tree[key]).forEach(function(i){
+                console.log(i,tree[key][i]);
+            });
+        }
+
+    });*/
+
+
+
+
+
+    //注意参数的传递
+    //找id
+    function checkId(cec, ir,name) {
+            if(typeof cec == 'object') {
+                var srrays = [];
+                for(var ir in cec){
+                    checkId(cec[ir], 'i',name);
+                }
+               if (cec.name == name) {
+                   console.log(cec.id)
+               }
+            }
+    }
+    //找name
+    function checkName(cec, ir,id) {
+        if(typeof cec == 'object') {
+            var srrays = [];
+            for(var ir in cec){
+                checkName(cec[ir], 'i',id);
+            }
+            if (cec.id == id) {
+                console.log(cec.name);
+            }
+        }
+    }
+
+
+
+    // 假设id和name均不会重复，根据输入name找到对应的id
+    /*function findIdByName(name) {
+        checkId(tree,'key',name);
+    }*/
+    function findIdByName(name) {
+        var id;
+        function findName(obj) {
+            if (obj != null) {
+                if (obj.name == name) {
+                    id = obj.id;
+                    console.log(id);
+                }
+                findName(obj.left);
+                findName(obj.right);
+            }
+        }
+        findName(tree);
+    }
+    findIdByName('Carl');
+
+    // 假设id和name均不会重复，根据输入id找到对应的name
+    /*function findNameById(id) {
+        checkName(tree,'key',id);
+    }*/
+    function findNameById(id) {
+        var name;
+        function findId(obj) {
+            if (obj != null) {
+                if (obj.id == id) {
+                    name = obj.name;
+                    console.log(name);
+                }
+                findId(obj.left);
+                findId(obj.right);
+            }
+        }
+        findId(tree);
+    }
+    findNameById(10);
+
+    //此处的思路结构借鉴与百度搜索到的内容
+    // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+    function getListWithDLR() {
+        function preOrder(obj) {
+            if (obj != null) {
+                console.log(obj.name);
+                preOrder(obj.left);
+                preOrder(obj.right);
+            }
+        }
+        preOrder(tree);
+    };
+    getListWithDLR();
+
+    // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+    function getListWithLDR() {
+        function inOrder(e) {
+            if (e != null) {
+                inOrder(e.left);
+                console.log(e.name);
+                inOrder(e.right);
+            }
+        }
+        inOrder(tree);
+    }
+
+    // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+    function getListWithLRD() {
+        function postOrder(E) {
+            if (E != null) {
+                postOrder(E.left);
+                postOrder(E.right);
+                console.log(E.name);
+            }
+        }
+        postOrder(tree);
+    }
+</script>
+</body>
+</html>

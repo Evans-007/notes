@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input id="stack-input" type="text">
+<p id="stack-cont">栈内容：<!--apple-gt;pear--></p>
+<button id="push-btn">进栈</button>
+<button id="pop-btn">退栈</button>
+<button id="font-btn">打印栈顶元素内容</button>
+<button id="empty-btn">判断栈是否为空</button>
+
+<script>
+    /*
+       push()方法可以在数组的末属添加一个或多个元素
+       shift()方法把数组中的第一个元素删除
+       unshift()方法可以在数组的前端添加一个或多个元素
+       pop()方法把数组中的最后一个元素删除
+   */
+
+    var stack = ["apple", "pear"];
+    console.log(stack);
+    var si = document.getElementById('stack-input');
+    document.getElementById('push-btn').onclick = function () {
+        if (si.value.length != 0) {
+            stack.push(si.value);
+            document.getElementById('stack-cont').innerHTML = '栈内容：' + stack.join('->');
+        } else {
+            document.getElementById('stack-cont').innerHTML = '栈内容：' + stack.join('->');
+        }
+    }
+
+    document.getElementById('pop-btn').onclick = function () {
+        stack.pop();
+        document.getElementById('stack-cont').innerHTML = '栈内容：' + stack.join('->');
+    }
+
+    document.getElementById('font-btn').onclick = function () {
+        var sp = stack.pop();
+        document.getElementById('stack-cont').innerText = '栈顶元素内容：' + sp;
+    }
+
+    document.getElementById('empty-btn').onclick = function () {
+        if(stack.length == 0) {
+            document.getElementById('stack-cont').innerText = '栈顶元素内容为空';
+        } else {
+            document.getElementById('stack-cont').innerHTML = '队列内容不为空';
+        }
+    }
+</script>
+</body>
+</html>

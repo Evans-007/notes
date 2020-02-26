@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">队列内容：<!--apple&lt;-pear--></p>
+<button id="in-btn">入队</button>
+<button id="out-btn">出队</button>
+<button id="font-btn">打印队头元素内容</button>
+<button id="empty-btn">判断队列是否为空</button>
+
+<script>
+    /*
+        push()方法可以在数组的末属添加一个或多个元素
+        shift()方法把数组中的第一个元素删除
+        unshift()方法可以在数组的前端添加一个或多个元素
+        pop()方法把数组中的最后一个元素删除
+    */
+
+    var queue = ["apple", "pear"];
+    var qi = document.getElementById('queue-input');
+    document.getElementById('in-btn').onclick = function () {
+        if(qi.value.length != 0) {
+            queue.unshift(qi.value);
+            document.getElementById('queue-cont').innerHTML = '队列内容：' + queue.join('<-');
+        } else {
+            document.getElementById('queue-cont').innerHTML = '队列内容：' + queue.join('<-');
+        }
+
+    }
+
+    document.getElementById('out-btn').onclick = function () {
+        queue.shift();
+        document.getElementById('queue-cont').innerHTML = '队列内容：' + queue.join('<-');
+    }
+
+    document.getElementById('font-btn').onclick = function () {
+        var pp = queue.shift();
+        document.getElementById('queue-cont').innerHTML = '队列内容：' + pp;
+    }
+
+
+    document.getElementById('empty-btn').onclick = function () {
+        if (queue.length == 0) {
+            document.getElementById('queue-cont').innerHTML = '队列内容为空';
+        } else {
+            document.getElementById('queue-cont').innerHTML = '队列内容不为空';
+        }
+
+    }
+</script>
+</body>
+</html>

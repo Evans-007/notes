@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+实现一个字符串头尾去除空格的函数
+注意需要去除的空格，包括全角、半角空格
+暂时不需要学习和使用正则表达式的方式
+*/
+    function diyTrim(str) {
+        var result = "";
+        if (str == null) return "";
+        //去除前面所有的空格
+        while (str[0] == ' ' || str.charCodeAt(0) == 12288) {
+            str = str.substr(1,str.length);
+        }
+
+        //去除后面的空格
+        while (str[str.length - 1] == ' ' || str.charCodeAt(str.length - 1) == 12288){
+            str = str.substr(0, str.length - 1);
+        }
+        // do something
+        result = str;
+        return result
+    }
+
+    // 测试用例
+    console.log(diyTrim(' a f b    ')); // ->a f b
+    console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+    console.log(diyTrim('1    ')); // ->1
+    console.log(diyTrim('　　f')); // ->f
+    console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+    console.log(diyTrim(' ')); // ->
+    console.log(diyTrim('　')); // ->
+    console.log(diyTrim('')); // ->
+
+    /*
+    去掉字符串str中，连续重复的地方
+    */
+    /*function removeRepetition(str) {
+            var result = "",  //空的结果
+                    strA =str.split(""), //将字符串进行分割，变成数组
+                    strB = [],  //创建空的字符串
+                    j=0;
+
+              for(var i=0;i<strA.length;i++){   //对分割好，已变成数组的字符串A进行循环
+                     if(strA[i] !=strB[j]){　　　　　//判断循环到的A的元素和B的最后一位元素是否相等（因为B是一个空数组）
+                            j++;　　　　　　　　　　　　　　//j一定要先加1
+                             strB[j]=strA[i];
+                          }
+                   }
+            result=(strB.toString()).replace(/,/g,"");
+
+             return result;
+         }*/
+
+    function removeRepetition(str){
+                var result="";
+                len=str.length;    //一定要现将str的长度先取出来，因为在循环的时候每次切割字符串是会改变字符串长度的
+                for(var i=0 ; i<len;i++){
+                    if(str[0]==str[1]){
+                        str=str.slice(1);
+                    }else{
+                        result=result+str[0];
+                        str=str.slice(1);
+                    }
+                 }
+                 return result;
+             }
+
+    // 测试用例
+    console.log(removeRepetition("aaa")); // ->a
+    console.log(removeRepetition("abbba")); // ->aba
+    console.log(removeRepetition("aabbaabb")); // ->abab
+    console.log(removeRepetition("")); // ->
+    console.log(removeRepetition("abc")); // ->abc
+</script>
+</body>
+</html>
